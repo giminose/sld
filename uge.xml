@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StyledLayerDescriptor version="1.0.0" 
+xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd" 
+xmlns="http://www.opengis.net/sld" 
+xmlns:ogc="http://www.opengis.net/ogc" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<!-- a Named Layer is the basic building block of an SLD document -->
+    <NamedLayer>
+        <Name>under ground elevation</Name>
+        <UserStyle>
+        <!-- Styles can have names, titles and abstracts -->
+            <Title>under ground elevation</Title>
+            <!-- FeatureTypeStyles describe how to render different features -->
+            <!-- A FeatureTypeStyle for rendering polygons -->
+            <FeatureTypeStyle>
+                <Rule>
+                    <Name>level1</Name>
+                    <Title><![CDATA[<= 8]]></Title>
+                    <ogc:Filter>
+                    <ogc:PropertyIsLessThanOrEqualTo>
+                        <ogc:PropertyName>hbf</ogc:PropertyName>
+                        <ogc:Literal>8</ogc:Literal>
+                    </ogc:PropertyIsLessThanOrEqualTo>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#feffb1</CssParameter>
+                        	<CssParameter name="fill-opacity">1</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+                <Rule>
+                    <Name>level2</Name>
+                    <Title>8 - 10</Title>
+                    <ogc:Filter>
+                    <ogc:And>
+                        <ogc:PropertyIsGreaterThan>
+                        	<ogc:PropertyName>hbf</ogc:PropertyName>
+                        	<ogc:Literal>8</ogc:Literal>
+                        </ogc:PropertyIsGreaterThan>
+                        <ogc:PropertyIsLessThanOrEqualTo>
+                        	<ogc:PropertyName>hbf</ogc:PropertyName>
+                        	<ogc:Literal>10</ogc:Literal>
+                        </ogc:PropertyIsLessThanOrEqualTo>
+                    </ogc:And>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#ffec90</CssParameter>
+                          	<CssParameter name="fill-opacity">1</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+                <Rule>
+                    <Name>level3</Name>
+                    <Title>10 - 12</Title>
+                    <ogc:Filter>
+                    <ogc:And>
+                        <ogc:PropertyIsGreaterThan>
+                        	<ogc:PropertyName>hbf</ogc:PropertyName>
+                        	<ogc:Literal>10</ogc:Literal>
+                        </ogc:PropertyIsGreaterThan>
+                        <ogc:PropertyIsLessThanOrEqualTo>
+                        	<ogc:PropertyName>hbf</ogc:PropertyName>
+                        	<ogc:Literal>12</ogc:Literal>
+                        </ogc:PropertyIsLessThanOrEqualTo>
+                    </ogc:And>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#ffd76d</CssParameter>
+                          	<CssParameter name="fill-opacity">1</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+                <Rule>
+                    <Name>level4</Name>
+                    <Title>12 - 14</Title>
+                    <ogc:Filter>
+                    <ogc:And>
+                        <ogc:PropertyIsGreaterThan>
+                        	<ogc:PropertyName>hbf</ogc:PropertyName>
+                        	<ogc:Literal>12</ogc:Literal>
+                        </ogc:PropertyIsGreaterThan>
+                        <ogc:PropertyIsLessThanOrEqualTo>
+                        	<ogc:PropertyName>hbf</ogc:PropertyName>
+                        	<ogc:Literal>14</ogc:Literal>
+                        </ogc:PropertyIsLessThanOrEqualTo>
+                    </ogc:And>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#ffbf55</CssParameter>
+                          	<CssParameter name="fill-opacity">1</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+                <Rule>
+                    <Name>level5</Name>
+                    <Title>14 - 16</Title>
+                    <ogc:Filter>
+                    <ogc:And>
+                        <ogc:PropertyIsGreaterThan>
+                        	<ogc:PropertyName>hbf</ogc:PropertyName>
+                        	<ogc:Literal>14</ogc:Literal>
+                        </ogc:PropertyIsGreaterThan>
+                        <ogc:PropertyIsLessThanOrEqualTo>
+                        	<ogc:PropertyName>hbf</ogc:PropertyName>
+                        	<ogc:Literal>16</ogc:Literal>
+                        </ogc:PropertyIsLessThanOrEqualTo>
+                    </ogc:And>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#ffa64a</CssParameter>
+                          	<CssParameter name="fill-opacity">1</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+                <Rule>
+                    <Name>level6</Name>
+                    <Title>16 - 18</Title>
+                    <ogc:Filter>
+                    <ogc:And>
+                        <ogc:PropertyIsGreaterThan>
+                        	<ogc:PropertyName>hbf</ogc:PropertyName>
+                        	<ogc:Literal>16</ogc:Literal>
+                        </ogc:PropertyIsGreaterThan>
+                        <ogc:PropertyIsLessThanOrEqualTo>
+                        	<ogc:PropertyName>hbf</ogc:PropertyName>
+                        	<ogc:Literal>18</ogc:Literal>
+                        </ogc:PropertyIsLessThanOrEqualTo>
+                    </ogc:And>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#fd8c3e</CssParameter>
+                          	<CssParameter name="fill-opacity">1</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+                <Rule>
+                    <Name>level7</Name>
+                    <Title>18 - 20</Title>
+                    <ogc:Filter>
+                    <ogc:And>
+                        <ogc:PropertyIsGreaterThan>
+                        	<ogc:PropertyName>hbf</ogc:PropertyName>
+                        	<ogc:Literal>18</ogc:Literal>
+                        </ogc:PropertyIsGreaterThan>
+                        <ogc:PropertyIsLessThanOrEqualTo>
+                        	<ogc:PropertyName>hbf</ogc:PropertyName>
+                        	<ogc:Literal>20</ogc:Literal>
+                        </ogc:PropertyIsLessThanOrEqualTo>
+                    </ogc:And>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#f86c2f</CssParameter>
+                          	<CssParameter name="fill-opacity">1</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+                <Rule>
+                    <Name>level8</Name>
+                    <Title>20 - 22</Title>
+                    <ogc:Filter>
+                    <ogc:And>
+                        <ogc:PropertyIsGreaterThan>
+                        	<ogc:PropertyName>hbf</ogc:PropertyName>
+                        	<ogc:Literal>20</ogc:Literal>
+                        </ogc:PropertyIsGreaterThan>
+                        <ogc:PropertyIsLessThanOrEqualTo>
+                        	<ogc:PropertyName>hbf</ogc:PropertyName>
+                        	<ogc:Literal>22</ogc:Literal>
+                        </ogc:PropertyIsLessThanOrEqualTo>
+                    </ogc:And>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#f24a26</CssParameter>
+                          	<CssParameter name="fill-opacity">1</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+                <Rule>
+                    <Name>level9</Name>
+                    <Title>22 - 24</Title>
+                    <ogc:Filter>
+                    <ogc:And>
+                        <ogc:PropertyIsGreaterThan>
+                        	<ogc:PropertyName>hbf</ogc:PropertyName>
+                        	<ogc:Literal>22</ogc:Literal>
+                        </ogc:PropertyIsGreaterThan>
+                        <ogc:PropertyIsLessThanOrEqualTo>
+                        	<ogc:PropertyName>hbf</ogc:PropertyName>
+                        	<ogc:Literal>24</ogc:Literal>
+                        </ogc:PropertyIsLessThanOrEqualTo>
+                    </ogc:And>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#e72f21</CssParameter>
+                          	<CssParameter name="fill-opacity">1</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+                <Rule>
+                    <Name>level10</Name>
+                    <Title>24 - 26</Title>
+                    <ogc:Filter>
+                    <ogc:And>
+                        <ogc:PropertyIsGreaterThan>
+                        	<ogc:PropertyName>hbf</ogc:PropertyName>
+                        	<ogc:Literal>24</ogc:Literal>
+                        </ogc:PropertyIsGreaterThan>
+                        <ogc:PropertyIsLessThanOrEqualTo>
+                        	<ogc:PropertyName>hbf</ogc:PropertyName>
+                        	<ogc:Literal>26</ogc:Literal>
+                        </ogc:PropertyIsLessThanOrEqualTo>
+                    </ogc:And>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#d31722</CssParameter>
+                          	<CssParameter name="fill-opacity">1</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+                <Rule>
+                    <Name>level11</Name>
+                    <Title><![CDATA[> 26]]></Title>
+                    <ogc:Filter>
+                    <ogc:PropertyIsGreaterThan>
+                        <ogc:PropertyName>hbf</ogc:PropertyName>
+                        <ogc:Literal>26</ogc:Literal>
+                    </ogc:PropertyIsGreaterThan>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#bd0026</CssParameter>
+                          	<CssParameter name="fill-opacity">1</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+            </FeatureTypeStyle>
+        </UserStyle>
+    </NamedLayer>
+</StyledLayerDescriptor>

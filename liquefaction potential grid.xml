@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StyledLayerDescriptor version="1.0.0" 
+xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd" 
+xmlns="http://www.opengis.net/sld" 
+xmlns:ogc="http://www.opengis.net/ogc" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<!-- a Named Layer is the basic building block of an SLD document -->
+    <NamedLayer>
+        <Name>primary_liquefaction_potential</Name>
+        <UserStyle>
+        <!-- Styles can have names, titles and abstracts -->
+            <Title>population desity</Title>
+            <Abstract>A sample style that draws a primary liquefaction potential</Abstract>
+            <!-- FeatureTypeStyles describe how to render different features -->
+            <!-- A FeatureTypeStyle for rendering polygons -->
+            <FeatureTypeStyle>
+                <Rule>
+                    <Name>level1</Name>
+                    <Title>LESS than 5</Title>
+                    <ogc:Filter>
+                    <ogc:PropertyIsLessThanOrEqualTo>
+                        <ogc:PropertyName>pl</ogc:PropertyName>
+                        <ogc:Literal>5</ogc:Literal>
+                    </ogc:PropertyIsLessThanOrEqualTo>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#00ff00</CssParameter>
+                        	<CssParameter name="fill-opacity">0.4</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+                <Rule>
+                    <Name>level2</Name>
+                    <Title>5 to 15</Title>
+                    <ogc:Filter>
+                    <ogc:And>
+                        <ogc:PropertyIsGreaterThan>
+                        	<ogc:PropertyName>pl</ogc:PropertyName>
+                        	<ogc:Literal>5</ogc:Literal>
+                        </ogc:PropertyIsGreaterThan>
+                        <ogc:PropertyIsLessThanOrEqualTo>
+                        	<ogc:PropertyName>pl</ogc:PropertyName>
+                        	<ogc:Literal>15</ogc:Literal>
+                        </ogc:PropertyIsLessThanOrEqualTo>
+                    </ogc:And>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#ffff00</CssParameter>
+                          	<CssParameter name="fill-opacity">0.4</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+                <Rule>
+                    <Name>level3</Name>
+                    <Title>GREATER than 15</Title>
+                    <ogc:Filter>
+                    <ogc:PropertyIsGreaterThan>
+                        <ogc:PropertyName>pl</ogc:PropertyName>
+                        <ogc:Literal>15</ogc:Literal>
+                    </ogc:PropertyIsGreaterThan>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#ff0000</CssParameter>
+                          	<CssParameter name="fill-opacity">0.4</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+            </FeatureTypeStyle>
+        </UserStyle>
+    </NamedLayer>
+</StyledLayerDescriptor>

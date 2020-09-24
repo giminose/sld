@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StyledLayerDescriptor version="1.0.0" 
+xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd" 
+xmlns="http://www.opengis.net/sld" 
+xmlns:ogc="http://www.opengis.net/ogc" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<!-- a Named Layer is the basic building block of an SLD document -->
+    <NamedLayer>
+        <Name>HBF_DEEP</Name>
+        <UserStyle>
+        <!-- Styles can have names, titles and abstracts -->
+            <Title>HBF DEEP</Title>
+            <!-- FeatureTypeStyles describe how to render different features -->
+            <!-- A FeatureTypeStyle for rendering polygons -->
+            <FeatureTypeStyle>
+                <Rule>
+                    <Name>level1</Name>
+                    <Title><![CDATA[<= 10cm]]></Title>
+                    <ogc:Filter>
+                    <ogc:PropertyIsLessThanOrEqualTo>
+                        <ogc:PropertyName>hbf</ogc:PropertyName>
+                        <ogc:Literal>10</ogc:Literal>
+                    </ogc:PropertyIsLessThanOrEqualTo>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#81e686</CssParameter>
+                        	<CssParameter name="fill-opacity">10</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+                <Rule>
+                    <Name>level2</Name>
+                    <Title>10 - 30cm</Title>
+                    <ogc:Filter>
+                    <ogc:And>
+                        <ogc:PropertyIsGreaterThan>
+                        	<ogc:PropertyName>hbf</ogc:PropertyName>
+                        	<ogc:Literal>10</ogc:Literal>
+                        </ogc:PropertyIsGreaterThan>
+                        <ogc:PropertyIsLessThanOrEqualTo>
+                        	<ogc:PropertyName>hbf</ogc:PropertyName>
+                        	<ogc:Literal>30</ogc:Literal>
+                        </ogc:PropertyIsLessThanOrEqualTo>
+                    </ogc:And>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#faff8b</CssParameter>
+                          	<CssParameter name="fill-opacity">0.4</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+                <Rule>
+                    <Name>level3</Name>
+                    <Title>30 - 40cm</Title>
+                    <ogc:Filter>
+                    <ogc:And>
+                        <ogc:PropertyIsGreaterThan>
+                        	<ogc:PropertyName>hbf</ogc:PropertyName>
+                        	<ogc:Literal>30</ogc:Literal>
+                        </ogc:PropertyIsGreaterThan>
+                        <ogc:PropertyIsLessThanOrEqualTo>
+                        	<ogc:PropertyName>hbf</ogc:PropertyName>
+                        	<ogc:Literal>40</ogc:Literal>
+                        </ogc:PropertyIsLessThanOrEqualTo>
+                    </ogc:And>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#fec18b</CssParameter>
+                          	<CssParameter name="fill-opacity">0.4</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+                <Rule>
+                    <Name>level4</Name>
+                    <Title><![CDATA[> 40cm]]></Title>
+                    <ogc:Filter>
+                    <ogc:PropertyIsGreaterThan>
+                        <ogc:PropertyName>hbf</ogc:PropertyName>
+                        <ogc:Literal>40</ogc:Literal>
+                    </ogc:PropertyIsGreaterThan>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#fe908f</CssParameter>
+                          	<CssParameter name="fill-opacity">0.4</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+            </FeatureTypeStyle>
+        </UserStyle>
+    </NamedLayer>
+</StyledLayerDescriptor>

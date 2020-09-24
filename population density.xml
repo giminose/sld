@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StyledLayerDescriptor version="1.0.0" 
+xsi:schemaLocation="http://www.opengis.net/sld StyledLayerDescriptor.xsd" 
+xmlns="http://www.opengis.net/sld" 
+xmlns:ogc="http://www.opengis.net/ogc" 
+xmlns:xlink="http://www.w3.org/1999/xlink" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<!-- a Named Layer is the basic building block of an SLD document -->
+    <NamedLayer>
+        <Name>population_desity</Name>
+        <UserStyle>
+        <!-- Styles can have names, titles and abstracts -->
+            <Title>population desity</Title>
+            <Abstract>A sample style that draws a population desity</Abstract>
+            <!-- FeatureTypeStyles describe how to render different features -->
+            <!-- A FeatureTypeStyle for rendering polygons -->
+            <FeatureTypeStyle>
+                <Rule>
+                    <Name>level1</Name>
+                    <Title>Less Than 12</Title>
+                    <ogc:Filter>
+                    <ogc:PropertyIsLessThan>
+                        <ogc:PropertyName>note</ogc:PropertyName>
+                        <ogc:Literal>12</ogc:Literal>
+                    </ogc:PropertyIsLessThan>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#94f11a</CssParameter>
+                          	<CssParameter name="fill-opacity">0.4</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+                <Rule>
+                    <Name>level2</Name>
+                    <Title>13 to 25</Title>
+                    <ogc:Filter>
+                    <ogc:And>
+                        <ogc:PropertyIsGreaterThanOrEqualTo>
+                        <ogc:PropertyName>note</ogc:PropertyName>
+                        <ogc:Literal>13</ogc:Literal>
+                        </ogc:PropertyIsGreaterThanOrEqualTo>
+                        <ogc:PropertyIsLessThan>
+                        <ogc:PropertyName>note</ogc:PropertyName>
+                        <ogc:Literal>25</ogc:Literal>
+                        </ogc:PropertyIsLessThan>
+                    </ogc:And>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#cff272</CssParameter>
+	                        <CssParameter name="fill-opacity">0.4</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+                <Rule>
+                    <Name>level3</Name>
+                    <Title>26 to 50</Title>
+                    <ogc:Filter>
+                    <ogc:And>
+                        <ogc:PropertyIsGreaterThanOrEqualTo>
+                        <ogc:PropertyName>note</ogc:PropertyName>
+                        <ogc:Literal>26</ogc:Literal>
+                        </ogc:PropertyIsGreaterThanOrEqualTo>
+                        <ogc:PropertyIsLessThan>
+                        <ogc:PropertyName>note</ogc:PropertyName>
+                        <ogc:Literal>50</ogc:Literal>
+                        </ogc:PropertyIsLessThan>
+                    </ogc:And>
+                    </ogc:Filter>
+                    <PolygonSymbolizer>
+                        <Fill>
+                            <CssParameter name="fill">#fff854</CssParameter>
+                          	<CssParameter name="fill-opacity">0.4</CssParameter>
+                        </Fill>
+                    </PolygonSymbolizer>
+                </Rule>
+            <Rule>
+            <Name>level4</Name>
+            <Title>51 to 100</Title>
+                <ogc:Filter>
+                <ogc:And>
+                    <ogc:PropertyIsGreaterThanOrEqualTo>
+                    <ogc:PropertyName>note</ogc:PropertyName>
+                    <ogc:Literal>51</ogc:Literal>
+                    </ogc:PropertyIsGreaterThanOrEqualTo>
+                    <ogc:PropertyIsLessThan>
+                    <ogc:PropertyName>note</ogc:PropertyName>
+                    <ogc:Literal>100</ogc:Literal>
+                    </ogc:PropertyIsLessThan>
+                </ogc:And>
+                </ogc:Filter>
+                <PolygonSymbolizer>
+                <Fill>
+                    <CssParameter name="fill">#ff9949</CssParameter>
+                  	<CssParameter name="fill-opacity">0.4</CssParameter>
+                </Fill>
+                </PolygonSymbolizer>
+            </Rule>
+            <Rule>
+                <Name>level5</Name>
+                <Title>101 to 200</Title>
+                <ogc:Filter>
+                <ogc:And>
+                    <ogc:PropertyIsGreaterThanOrEqualTo>
+                    <ogc:PropertyName>note</ogc:PropertyName>
+                    <ogc:Literal>101</ogc:Literal>
+                    </ogc:PropertyIsGreaterThanOrEqualTo>
+                    <ogc:PropertyIsLessThan>
+                    <ogc:PropertyName>note</ogc:PropertyName>
+                    <ogc:Literal>200</ogc:Literal>
+                    </ogc:PropertyIsLessThan>
+                </ogc:And>
+                </ogc:Filter>
+                <PolygonSymbolizer>
+                    <Fill>
+                        <CssParameter name="fill">#ff5758</CssParameter>
+                      	<CssParameter name="fill-opacity">0.4</CssParameter>
+                    </Fill>
+                </PolygonSymbolizer>
+            </Rule>
+            <Rule>
+                <Name>level6</Name>
+                <Title>201 to 400</Title>
+                <ogc:Filter>
+                <ogc:And>
+                    <ogc:PropertyIsGreaterThanOrEqualTo>
+                    <ogc:PropertyName>note</ogc:PropertyName>
+                    <ogc:Literal>201</ogc:Literal>
+                    </ogc:PropertyIsGreaterThanOrEqualTo>
+                    <ogc:PropertyIsLessThan>
+                    <ogc:PropertyName>note</ogc:PropertyName>
+                    <ogc:Literal>400</ogc:Literal>
+                    </ogc:PropertyIsLessThan>
+                </ogc:And>
+                </ogc:Filter>
+                <PolygonSymbolizer>
+                    <Fill>
+                        <CssParameter name="fill">#e5028a</CssParameter>
+                      	<CssParameter name="fill-opacity">0.4</CssParameter>
+                    </Fill>
+                </PolygonSymbolizer>
+            </Rule>
+            <Rule>
+                <Name>level7</Name>
+                <Title>401 to 800</Title>
+                <ogc:Filter>
+                <ogc:And>
+                    <ogc:PropertyIsGreaterThanOrEqualTo>
+                    <ogc:PropertyName>note</ogc:PropertyName>
+                    <ogc:Literal>401</ogc:Literal>
+                    </ogc:PropertyIsGreaterThanOrEqualTo>
+                    <ogc:PropertyIsLessThan>
+                    <ogc:PropertyName>note</ogc:PropertyName>
+                    <ogc:Literal>800</ogc:Literal>
+                    </ogc:PropertyIsLessThan>
+                </ogc:And>
+                </ogc:Filter>
+                <PolygonSymbolizer>
+                    <Fill>
+                        <CssParameter name="fill">#ab0274</CssParameter>
+                      	<CssParameter name="fill-opacity">0.4</CssParameter>
+                    </Fill>
+                </PolygonSymbolizer>
+            </Rule>
+            <Rule>
+                <Name>level8</Name>
+                <Title>Greater Than 800</Title>
+                <ogc:Filter>
+                    <ogc:PropertyIsGreaterThan>
+                    <ogc:PropertyName>note</ogc:PropertyName>
+                    <ogc:Literal>800</ogc:Literal>
+                    </ogc:PropertyIsGreaterThan>
+                </ogc:Filter>
+                <PolygonSymbolizer>
+                    <Fill>
+                        <CssParameter name="fill">#370e4d</CssParameter>
+                      	<CssParameter name="fill-opacity">0.4</CssParameter>
+                    </Fill>
+                </PolygonSymbolizer>
+            </Rule>
+            </FeatureTypeStyle>
+        </UserStyle>
+    </NamedLayer>
+</StyledLayerDescriptor>
